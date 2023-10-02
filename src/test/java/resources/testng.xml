@@ -1,0 +1,7 @@
+<suite name="Cucumber Parallel Suite">
+    <test name="Cucumber Tests">
+        <classes>
+            <class name="com.appmetry.runner.TestRunner"/>
+        </classes>
+    </test>
+</suite>

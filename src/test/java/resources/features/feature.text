@@ -1,0 +1,19 @@
+Scenario Outline: Login with Invalid Logins
+             When I enter username "<username>" and password "<password>"
+              And I click the "Login" button
+             Then I should see "<expected_result>"
+
+        Examples:
+                  | username        | password      | expected_result                                                                                                       |
+                  | user123         | incorrectpass | I should see "Login was unsuccessful. Please correct the errors and try again.The credentials provided are incorrect" |
+                  | nonexistentuser | anypassword   | I should see "Login was unsuccessful. Please correct the errors and try again.No customer account found"              |
+                  |                 |               | I should see "Please enter your email"                                                                                |
+
+        Scenario: Password Recovery
+             When I click on the "Forgot Password" link
+             Then I should be redirected to the password recovery page
+
+        Scenario: Logout
+             When I click on the "Logout" button
+             Then I should be logged out of my account
+              And I should be redirected to the login page
