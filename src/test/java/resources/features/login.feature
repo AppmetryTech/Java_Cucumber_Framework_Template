@@ -16,6 +16,6 @@ Feature: Login Page Functionality
              Then User should see "<expected_result>"
 
         Examples:
-                  | username          | password      | expected_result                                                                                                       |
-                  | user123@gmail.com | incorrectpass | I should see "Login was unsuccessful. Please correct the errors and try again.The credentials provided are incorrect" |
+                  | username          | password      | expected_result                                                                                       |
+                  | user123@gmail.com | incorrectpass | Login was unsuccessful. Please correct the errors and try again.\nNo customer account found|
                 

@@ -1,5 +1,6 @@
 package com.appmetry.PracticeTest;
 
+import com.appmetry.driver.DriverManager;
 import org.openqa.selenium.WebDriver;
 import com.appmetry.driver.BrowserManager;
 import com.appmetry.utils.ConfigReader;
@@ -9,7 +10,7 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
 public class BaseTest {
-    protected static ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<>();
+   // protected static ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<>();
     private ConfigReader configReader;
 
     @Before
@@ -22,23 +23,25 @@ public class BaseTest {
         String browserType = configReader.prop.getProperty("browser");
 
         WebDriver driver = BrowserManager.doBrowserSetup(browserType);
-
-        threadLocalDriver.set(driver);
+        DriverManager.setDriver(driver);
+       // threadLocalDriver.set(driver);
 
         System.out.println("Before Test Thread ID: " + Thread.currentThread().getId());
-        getDriver().get(baseUrl);
+        DriverManager.getDriver().get(baseUrl);
+       // getDriver().get(baseUrl);
     }
 
-    public static WebDriver getDriver() {
+    /*public static WebDriver getDriver() {
         return threadLocalDriver.get();
-    }
+    }*/
 
     @After
     public void tearDown() {
-        getDriver().quit();
-
+      //  getDriver().quit();
+        DriverManager.getDriver().quit();
         System.out.println("After Test Thread ID: " + Thread.currentThread().getId());
-        threadLocalDriver.remove();
+       // threadLocalDriver.remove();
+        DriverManager.unloadDriver();
     }
 
 }

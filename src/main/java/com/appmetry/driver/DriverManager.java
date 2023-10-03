@@ -1,4 +1,4 @@
-package com.appmetry.trash;
+package com.appmetry.driver;
 
 import org.openqa.selenium.WebDriver;
 

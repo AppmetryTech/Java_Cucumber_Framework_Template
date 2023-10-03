@@ -1,4 +1,7 @@
 <suite name="Cucumber Parallel Suite">
+    <listeners>
+        <listener class-name="org.testng.reporters.JUnitXMLReporter" />
+    </listeners>
     <test name="Cucumber Tests">
         <classes>
             <class name="com.appmetry.runner.TestRunner"/>

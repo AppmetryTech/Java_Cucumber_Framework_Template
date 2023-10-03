@@ -1,7 +1,7 @@
 package com.appmetry.stepdefinations;
 
-import com.appmetry.PracticeTest.BaseTest;
 import com.appmetry.pages.LoginPage;
+import com.appmetry.driver.DriverManager;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -13,11 +13,11 @@ public class LoginStepDef {
 
     @Given("the login page is open")
     public void the_login_page_is_open() {
-        loginPage = new LoginPage(BaseTest.getDriver());
+        loginPage = new LoginPage(DriverManager.getDriver());
         loginPage.redirectToLoginpage();
     }
 
-    @When("User enters username as {string} and password as {string}")
+    @When("^User enters username as \\\"(.*)\\\" and password as \\\"(.*)\\\"$")
     public void user_enters_username_as_and_password_as(String username, String password) throws InterruptedException {
         loginPage.enterUsername(username);
         loginPage.enterPassword(password);
@@ -37,9 +37,18 @@ public class LoginStepDef {
         Assert.assertEquals(actualString, expeString);
     }
 
+
+  /* @Then("User should see (.*)$")
+   public void user_should_see(String expeString) {
+       Assert.assertEquals(loginPage.verifyErrorMsg(), expeString);
+   }*/
+
     @Then("User should see {string}")
-    public void user_should_see(String expeString) {
-        Assert.assertEquals(loginPage.verifyErrorMsg(), expeString);
+    public void user_should_see(String string) {
+        Assert.assertEquals(loginPage.verifyErrorMsg(), string);
     }
+
+
+
 
 }
