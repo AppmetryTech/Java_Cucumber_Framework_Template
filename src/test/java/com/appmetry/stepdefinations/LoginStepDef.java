@@ -7,6 +7,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 
+
+
 public class LoginStepDef {
 
     private LoginPage loginPage;
@@ -14,7 +16,8 @@ public class LoginStepDef {
     @Given("the login page is open")
     public void the_login_page_is_open() {
         loginPage = new LoginPage(DriverManager.getDriver());
-        loginPage.redirectToLoginpage();
+        loginPage.redirectToLoginPage();
+
     }
 
     @When("^User enters username as \\\"(.*)\\\" and password as \\\"(.*)\\\"$")

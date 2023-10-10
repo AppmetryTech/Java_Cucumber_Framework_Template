@@ -1,4 +1,7 @@
+com\appmetry\driver\DriverManager.class
 com\appmetry\driver\BrowserManager.class
+com\appmetry\trash\BrowserManager1$BrowserManager.class
+com\appmetry\trash\BrowserManager1.class
 com\appmetry\pages\LoginPage.class
-com\appmetry\trash\DriverManager.class
 com\appmetry\utils\ConfigReader.class
+com\appmetry\driver\RemoteDriver.class

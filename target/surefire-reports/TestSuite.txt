@@ -1,4 +1,16 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 23.12 s -- in TestSuite
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 3.687 s <<< FAILURE! -- in TestSuite
+com.appmetry.runner.TestRunner.runScenario["Login with valid credentials", "Login Page Functionality"](1) -- Time elapsed: 0.407 s <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null
+	at com.appmetry.pages.LoginPage.redirectToLoginPage(LoginPage.java:81)
+	at com.appmetry.stepdefinations.LoginStepDef.the_login_page_is_open(LoginStepDef.java:17)
+	at ✽.the login page is open(file:///C:/Users/Appmetry/Project/Java_Cucumber_Framework_Template/src/test/java/resources/features/login.feature:6)
+
+com.appmetry.runner.TestRunner.runScenario["Login with Invalid Logins", "Login Page Functionality"](2) -- Time elapsed: 0.023 s <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null
+	at com.appmetry.pages.LoginPage.redirectToLoginPage(LoginPage.java:81)
+	at com.appmetry.stepdefinations.LoginStepDef.the_login_page_is_open(LoginStepDef.java:17)
+	at ✽.the login page is open(file:///C:/Users/Appmetry/Project/Java_Cucumber_Framework_Template/src/test/java/resources/features/login.feature:6)
+

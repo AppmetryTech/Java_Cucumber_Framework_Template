@@ -1,4 +1,6 @@
 C:\Users\Appmetry\Project\Java_Cucumber_Framework_Template\src\main\java\com\appmetry\utils\ConfigReader.java
 C:\Users\Appmetry\Project\Java_Cucumber_Framework_Template\src\main\java\com\appmetry\pages\LoginPage.java
-C:\Users\Appmetry\Project\Java_Cucumber_Framework_Template\src\main\java\com\appmetry\trash\DriverManager.java
+C:\Users\Appmetry\Project\Java_Cucumber_Framework_Template\src\main\java\com\appmetry\trash\BrowserManager1.java
 C:\Users\Appmetry\Project\Java_Cucumber_Framework_Template\src\main\java\com\appmetry\driver\BrowserManager.java
+C:\Users\Appmetry\Project\Java_Cucumber_Framework_Template\src\main\java\com\appmetry\driver\DriverManager.java
+C:\Users\Appmetry\Project\Java_Cucumber_Framework_Template\src\main\java\com\appmetry\driver\RemoteDriver.java

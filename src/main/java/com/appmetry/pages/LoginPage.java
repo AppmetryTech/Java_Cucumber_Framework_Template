@@ -1,5 +1,6 @@
 package com.appmetry.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,6 +10,46 @@ public class LoginPage {
 
     private WebDriver driver;
 
+    // wihtout using pagefactory
+    // Locators
+    private By openLoginPageLocator = By.className("ico-login");
+    private By emailFieldLocator = By.id("Email");
+    private By passwordFieldLocator = By.id("Password");
+    private By loginButtonLocator = By.xpath("//button[@type='submit' and text()='Log in']");
+    private By getLoginTitleLocator = By.className("topic-block-title");
+    private By errorMsgLocator = By.xpath("//div[@class='message-error validation-summary-errors']");
+
+    public LoginPage(WebDriver driver) {
+        this.driver = driver;
+    }
+
+    public void redirectToLoginPage() {
+        driver.findElement(openLoginPageLocator).click();
+    }
+
+    public void enterUsername(String email) {
+        driver.findElement(emailFieldLocator).sendKeys(email);
+    }
+
+    public void enterPassword(String password) {
+        driver.findElement(passwordFieldLocator).sendKeys(password);
+    }
+
+    public void clickLoginButton() {
+        driver.findElement(loginButtonLocator).click();
+    }
+
+    public String verifyLogin() {
+        return driver.findElement(getLoginTitleLocator).getText();
+    }
+
+    public String verifyErrorMsg() {
+        return driver.findElement(errorMsgLocator).getText();
+    }
+}
+
+    // using pageFactory
+/*
     @FindBy(className = "ico-login")
     WebElement openLoginPage;
 
@@ -33,7 +74,7 @@ public class LoginPage {
 
     }
 
-    public void redirectToLoginpage() {
+    public void redirectToLoginPage() {
         openLoginPage.click();
     }
 
@@ -58,4 +99,8 @@ public class LoginPage {
         return errorMsg.getText();
     }
 
-}
+*/
+
+
+
+

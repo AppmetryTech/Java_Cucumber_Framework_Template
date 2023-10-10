@@ -1,7 +1,4 @@
-<suite name="Cucumber Parallel Suite">
-    <listeners>
-        <listener class-name="org.testng.reporters.JUnitXMLReporter" />
-    </listeners>
+<suite thread-count="3" name="CucumberParallel" parallel="tests" >
     <test name="Cucumber Tests">
         <classes>
             <class name="com.appmetry.runner.TestRunner"/>
